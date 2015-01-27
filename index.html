@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content=" My Neighborhood Map - Find interesting spots in my newighborhood, with the power of AJAX!  ">
+        <meta name="author" content=" Vincenzo Auteri ">
+        <title>Neighborhood Map</title>
+
+        <link href="css/neighborhood.css" rel="stylesheet">
+
+        <style type="text/css">
+            html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
+        </style>
+        <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVXSCHHaE2szmuPZndLLyEPc7fnAnnEik">
+        </script>
+        <script type="text/javascript">
+            function initialize() {
+                var mapOptions = {
+                    center: { lat: 40.425773, lng: -3.704278},
+                    zoom: 17
+                };
+                var map = new google.maps.Map(document.getElementById('map-canvas'),
+                                              mapOptions);
+            }
+            google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+    </head>
+    <body>
+        <div id="map-canvas"></div>
+    </body>
+    <script src="js/knockout-3.2.0.js"></script>
+    <script src="js/neighborhood.js"></script>
+</html>
